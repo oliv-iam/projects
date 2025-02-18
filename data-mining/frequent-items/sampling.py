@@ -33,12 +33,13 @@ def sampling(ssize: int, dsize: int, delta: float, thres: float, datapath: str) 
     for item, count in scounts.items():
         if count / ssize >= sthres:
             frequent_items.append((int(item), float(count / ssize)))
-    frequent_items.sort(key=lambda x: (x[1], -x[0]), reverse=True) # switch to heap implementation?
+    frequent_items.sort(key=lambda x: (x[1], -x[0]), reverse=True)
     return [eps, frequent_items]
 
 def main():
+    # pass arguments to function if called as script
     if len(sys.argv) != 6:
-        sys.exit("incorrect arguments")
+        sys.exit("check arguments")
     ssize = int(sys.argv[1])
     dsize = int(sys.argv[2])
     delta = float(sys.argv[3])

@@ -20,12 +20,12 @@ def exact(thres: float, datapath: str) -> list[tuple[int, float]]:
     return frequent_items
 
 def main():
+    # pass args to function if called as script
     if len(sys.argv) != 3:
-        sys.exit("incorrect arguments") 
+        sys.exit("check arguments") 
     thres = float(sys.argv[1])
     datapath = sys.argv[2]
     print(exact(thres, datapath))
 
 if __name__ == "__main__":
     main()
-
